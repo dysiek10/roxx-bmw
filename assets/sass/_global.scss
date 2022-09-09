@@ -77,9 +77,16 @@ img {
 .section {
   padding: 150px 0;
 
+  transition: transform 1s, opacity 1s;
+
   @media (max-width: $dropColWidth) {
     padding: 100px 0;
   }
+}
+
+.section-hidden {
+  visibility: hidden;
+  transform: translateY(150px);
 }
 
 .row {

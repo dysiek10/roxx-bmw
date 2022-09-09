@@ -9,7 +9,7 @@ bmwIx.forEach((item) => {
 });
 
 ///////////////////////////////////////////////////
-// Navigation & hamburger menu
+// Navigation & Hamburger Menu
 
 const navigation = document.querySelector(".navigation");
 const hamburger = document.querySelector(".hamburger");
@@ -25,7 +25,34 @@ hamburger.addEventListener("click", function () {
 });
 
 ///////////////////////////////////////////////////
-// Modal window
+// Reveal Sections
+const allSections = document.querySelectorAll(".section");
+const imgsTop = document.querySelectorAll(".img-top");
+const imgsBottom = document.querySelectorAll("img-bottom");
+
+const revealSection = function (entries, observer) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.classList.remove("section-hidden");
+  imgsTop.forEach((img) => img.classList.remove("from-bottom"));
+  imgsBottom.forEach((img) => img.classList.remove("from-top"));
+  observer.unobserve(entry.target);
+};
+
+const sectionObserer = new IntersectionObserver(revealSection, {
+  root: null,
+  threshold: 0.15,
+});
+
+allSections.forEach(function (section) {
+  sectionObserer.observe(section);
+  section.classList.add("section-hidden");
+});
+
+///////////////////////////////////////////////////
+// Modal Window
 
 const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");

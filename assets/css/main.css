@@ -347,12 +347,22 @@ img {
 
 .section {
   padding: 150px 0;
+  -webkit-transition: opacity 1s, -webkit-transform 1s;
+  transition: opacity 1s, -webkit-transform 1s;
+  transition: transform 1s, opacity 1s;
+  transition: transform 1s, opacity 1s, -webkit-transform 1s;
 }
 
 @media (max-width: 1200px) {
   .section {
     padding: 100px 0;
   }
+}
+
+.section-hidden {
+  visibility: hidden;
+  -webkit-transform: translateY(150px);
+          transform: translateY(150px);
 }
 
 .row {
@@ -844,7 +854,7 @@ button {
   max-width: 320px;
   position: absolute;
   left: -214px;
-  bottom: -80px;
+  bottom: -30px;
 }
 
 .facts .row .info {
