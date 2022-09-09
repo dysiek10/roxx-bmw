@@ -6,12 +6,10 @@
   z-index: 10;
 
   .container {
-    // z-index: 1;
     font-family: $headerFontFamily;
     padding: 0;
 
     .navigation {
-      // width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -70,19 +68,21 @@
         }
 
         .menu-item {
-          // width: 100%;
-          &:last-child {
-            // margin: 0;
-            // position: absolute;
-            // bottom: 50px;
-            a {
-              // display: inline-block;
-              // padding: 20px 60px;
-              // background-color: $btnBg;
-              // text-transform: uppercase;
-              // font-family: $headerFontFamily;
-              // font-size: 18px;
-              // color: $homeTextColor;
+          @media (max-width: $menuHide) {
+            width: 100%;
+            &:last-child {
+              margin: 0;
+              position: absolute;
+              bottom: 50px;
+              a {
+                display: inline-block;
+                padding: 20px 60px;
+                background-color: $btnBg;
+                text-transform: uppercase;
+                font-family: $headerFontFamily;
+                font-size: 18px;
+                color: $homeTextColor;
+              }
             }
           }
         }

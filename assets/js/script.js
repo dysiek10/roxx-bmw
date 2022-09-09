@@ -8,7 +8,7 @@
 const navigation = document.querySelector(".navigation");
 const hamburger = document.querySelector(".hamburger");
 const menu = document.querySelector(".menu");
-const menuItems = document.querySelectorAll(".menu-item");
+const menuItems = document.querySelectorAll(".toggle");
 
 hamburger.addEventListener("click", function () {
   hamburger.classList.toggle("is-active");
@@ -107,7 +107,6 @@ form.addEventListener("submit", (event) => {
   event.preventDefault();
 });
 
-// btnOpenModal.addEventListener("click", openModal);
 btnCloseModal.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {

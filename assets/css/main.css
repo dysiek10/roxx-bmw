@@ -567,6 +567,26 @@ button {
   }
 }
 
+@media (max-width: 450px) {
+  .nav-bar .container .navigation .menu .menu-item {
+    width: 100%;
+  }
+  .nav-bar .container .navigation .menu .menu-item:last-child {
+    margin: 0;
+    position: absolute;
+    bottom: 50px;
+  }
+  .nav-bar .container .navigation .menu .menu-item:last-child a {
+    display: inline-block;
+    padding: 20px 60px;
+    background-color: #3369d3;
+    text-transform: uppercase;
+    font-family: "Cairo", sans-serif;
+    font-size: 18px;
+    color: #fff;
+  }
+}
+
 .nav-bar .container .navigation .menu .menu-item {
   margin: 0 50px 0 0;
   font-size: 18px;
