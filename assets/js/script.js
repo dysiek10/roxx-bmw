@@ -30,7 +30,7 @@ const allSections = document.querySelectorAll(".section");
 const imgsTop = document.querySelectorAll(".img-top");
 const imgsBottom = document.querySelectorAll("img-bottom");
 
-const revealSection = function (entries, observer) {
+function revealSection(entries, observer) {
   const [entry] = entries;
 
   if (!entry.isIntersecting) return;
@@ -39,7 +39,7 @@ const revealSection = function (entries, observer) {
   imgsTop.forEach((img) => img.classList.remove("from-bottom"));
   imgsBottom.forEach((img) => img.classList.remove("from-top"));
   observer.unobserve(entry.target);
-};
+}
 
 const sectionObserer = new IntersectionObserver(revealSection, {
   root: null,
@@ -50,6 +50,33 @@ allSections.forEach(function (section) {
   sectionObserer.observe(section);
   section.classList.add("section-hidden");
 });
+
+///////////////////////////////////////////////////
+// Lazy Loading Images
+
+const imgTargets = document.querySelectorAll("img[data-src]");
+
+function loadImg(entries, obsrever) {
+  const [entry] = entries;
+
+  if (!entry.isIntersecting) return;
+
+  entry.target.src = entry.target.dataset.src;
+
+  entry.target.addEventListener("load", function () {
+    entry.target.classList.remove("lazy-img");
+  });
+
+  obsrever.unobserve(entry.target);
+}
+
+const imgObserver = new IntersectionObserver(loadImg, {
+  root: null,
+  threshold: 0,
+  rootMargin: "200px",
+});
+
+imgTargets.forEach((img) => imgObserver.observe(img));
 
 ///////////////////////////////////////////////////
 // Modal Window
