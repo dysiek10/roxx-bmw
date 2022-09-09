@@ -1,12 +1,6 @@
 "use strict";
 ///////////////////////////////////////////////////
 // Global
-const bmwIx = document.querySelectorAll(".model");
-
-bmwIx.forEach((item) => {
-  console.log(item.innerHTML[0]);
-  item.innerHTML[0].toLowerCase();
-});
 
 ///////////////////////////////////////////////////
 // Navigation & Hamburger Menu
@@ -26,6 +20,16 @@ hamburger.addEventListener("click", function () {
 
 ///////////////////////////////////////////////////
 // Reveal Sections
+
+const splide = new Splide(".splide", {
+  arrows: false,
+  classes: {},
+});
+splide.mount();
+
+///////////////////////////////////////////////////
+// Reveal Sections
+
 const allSections = document.querySelectorAll(".section");
 const imgsTop = document.querySelectorAll(".img-top");
 const imgsBottom = document.querySelectorAll("img-bottom");
@@ -82,25 +86,28 @@ imgTargets.forEach((img) => imgObserver.observe(img));
 // Modal Window
 
 const modal = document.querySelector(".modal");
-const overlay = document.querySelector(".overlay");
 const btnOpenModal = document.querySelector(".open-modal");
 const btnCloseModal = document.querySelector(".close-modal");
+const form = document.querySelector(".form");
 
 function openModal() {
   modal.classList.remove("hidden");
-  overlay.classList.remove("hidden");
 
   document.querySelector("html").classList.add("menu-open");
 }
 
 function closeModal() {
   modal.classList.add("hidden");
-  overlay.classList.add("hidden");
 
   document.querySelector("html").classList.remove("menu-open");
 }
 
-btnOpenModal.addEventListener("click", openModal);
+form.addEventListener("submit", (event) => {
+  openModal();
+  event.preventDefault();
+});
+
+// btnOpenModal.addEventListener("click", openModal);
 btnCloseModal.addEventListener("click", closeModal);
 
 document.addEventListener("keydown", function (e) {

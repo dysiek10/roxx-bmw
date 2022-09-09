@@ -1,12 +1,17 @@
 .nav-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+
   .container {
-    background-color: rgb(49, 49, 49);
-    z-index: 1;
+    // z-index: 1;
     font-family: $headerFontFamily;
     padding: 0;
 
     .navigation {
-      width: 100%;
+      // width: 100%;
       display: flex;
       flex-wrap: wrap;
       justify-content: space-between;
@@ -65,8 +70,20 @@
         }
 
         .menu-item {
+          // width: 100%;
           &:last-child {
-            margin: 0;
+            // margin: 0;
+            // position: absolute;
+            // bottom: 50px;
+            a {
+              // display: inline-block;
+              // padding: 20px 60px;
+              // background-color: $btnBg;
+              // text-transform: uppercase;
+              // font-family: $headerFontFamily;
+              // font-size: 18px;
+              // color: $homeTextColor;
+            }
           }
         }
 
@@ -99,6 +116,10 @@
       color: $homeTextColor;
       font-size: 16px;
       text-align: right;
+
+      @media (max-width: $hide) {
+        display: none;
+      }
     }
   }
 }
