@@ -68,6 +68,10 @@ img {
   width: 100%;
 }
 
+.lazy-img {
+  filter: blur(20px);
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;

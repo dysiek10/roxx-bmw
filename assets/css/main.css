@@ -339,6 +339,11 @@ img {
   width: 100%;
 }
 
+.lazy-img {
+  -webkit-filter: blur(20px);
+          filter: blur(20px);
+}
+
 .container {
   max-width: 1360px;
   margin: 0 auto;
