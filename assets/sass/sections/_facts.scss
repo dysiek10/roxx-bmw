@@ -1,4 +1,5 @@
 .facts {
+  z-index: 1;
   .row {
     .photos {
       position: relative;
@@ -62,7 +63,7 @@
               position: absolute;
               bottom: -11px;
               left: 0;
-              z-index: 2;
+              z-index: 10;
             }
           }
         }

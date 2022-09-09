@@ -1,55 +1,104 @@
 .nav-bar {
-  z-index: 999;
-  font-family: $headerFontFamily;
-  .navigation {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 15px 0;
-    margin: 0 auto;
+  .container {
+    background-color: rgb(49, 49, 49);
+    z-index: 1;
+    font-family: $headerFontFamily;
+    padding: 0;
 
-    .nav-items {
+    .navigation {
+      width: 100%;
       display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
 
-      .item {
-        &:last-child {
-          margin: 0;
+      &.menu-open {
+        padding: 30px 40px 15px 40px;
+
+        position: relative;
+        flex-direction: column-reverse;
+        align-items: flex-end;
+        .menu {
+          position: fixed;
+          z-index: 666;
+          top: 0;
+          left: 0;
+
+          width: 100%;
+          height: 100vh;
+          padding: 50px;
+
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          background-color: $mainHeadersTextColor;
+
+          .menu-item {
+            text-transform: uppercase;
+            text-align: center;
+            font-size: 16px;
+            padding: 30px 0;
+            margin: 0;
+
+            display: block;
+            position: relative;
+
+            &:nth-child(2) {
+              border-top: 1px solid rgba($bodyBg, 0.25);
+              border-bottom: 1px solid rgba($bodyBg, 0.25);
+            }
+
+            a {
+              font-weight: 600;
+            }
+          }
         }
       }
 
-      .item {
-        margin: 0 50px 0 0;
-        font-size: 18px;
+      .menu {
+        display: flex;
 
-        &.hidden {
+        @media (max-width: $menuHide) {
           display: none;
         }
 
-        a {
-          color: $homeTextColor;
-          font-weight: 700;
+        .menu-item {
+          &:last-child {
+            margin: 0;
+          }
         }
+
+        .menu-item {
+          margin: 0 50px 0 0;
+          font-size: 18px;
+
+          a {
+            color: $homeTextColor;
+            font-weight: 700;
+          }
+        }
+      }
+
+      .logo {
+        width: 50px;
+        z-index: 777;
       }
     }
 
-    .logo {
-      width: 50px;
+    .long-line {
+      width: calc(100% - 75px);
+      position: relative;
+      z-index: 666;
     }
-  }
 
-  .long-line {
-    width: calc(100% - 75px);
-    background-color: $bodyBg;
-    position: relative;
-  }
-
-  .sub {
-    position: relative;
-    right: 75px;
-    color: $homeTextColor;
-    font-size: 16px;
-    text-align: right;
+    .sub {
+      position: relative;
+      right: 75px;
+      color: $homeTextColor;
+      font-size: 16px;
+      text-align: right;
+    }
   }
 }

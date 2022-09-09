@@ -20,7 +20,7 @@
     // ocb z tą wysokością...
     // min-height: 90vh;
     position: relative;
-    z-index: 888;
+    z-index: 1;
 
     .header {
       // ocb z tą wysokością...
@@ -44,7 +44,7 @@
 
     .dashes {
       position: relative;
-      z-index: 777;
+      z-index: 2;
       bottom: 0;
       left: 0;
       width: 60px;

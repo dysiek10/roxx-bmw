@@ -18,21 +18,27 @@
 
   <body>
     <header>
-      <div class="container">
         <!-- NAVBAR -->
-        <nav class="nav-bar">
+      <nav class="nav-bar">
+        <div class="container">
+
           <div class="navigation">
-            <ul class="nav-items">
-              <li class="item">
-                <a href="#facts">Nowe BMW <span class="model">iX</span></a>
+
+            <button class="hamburger">
+              <span></span>
+            </button>
+            
+            <ul class="menu">
+              <li class="menu-item">
+                <a href="#facts">Nowe BMW <span class="model">IX</span></a>
               </li>
-              <li class="item hidden">
+              <li class="menu-item hidden">
                 <a href="#description">Innowacyjna aerodynamika</a>
               </li>
-              <li class="item hidden">
+              <li class="menu-item hidden">
                 <a href="#gallery">Galeria</a>
               </li>
-              <li class="item">
+              <li class="menu-item">
                 <a href="#form">Umów jazdę próbną</a>
               </li>
             </ul>
@@ -40,18 +46,21 @@
             <div class="logo">
               <img src="assets/img/bmw_logo.png" alt="logo BMW" />
             </div>
+
           </div>
+
           <div class="long-line"></div>
           <div class="sub">
             <p><strong>Radość</strong> z jazdy</p>
           </div>
-        </nav>
-      </div>
+
+        </div>
+      </nav>
     </header>
 
     <main>
       <!-- HOME -->
-      <section class="home" id="home">
+      <section class="home hidden" id="home">
         <!-- SLIDER -->
         <div class="slider">
           <div class="slide">
