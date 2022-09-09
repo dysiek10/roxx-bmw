@@ -1,5 +1,13 @@
 html {
   scroll-behavior: smooth;
+
+  &.menu-open {
+    overflow-y: hidden;
+
+    body {
+      overflow-y: hidden;
+    }
+  }
 }
 
 body {
@@ -122,6 +130,8 @@ img {
 
 button {
   border: none;
+  outline: none;
+  background: none;
 }
 
 .btn {
@@ -140,7 +150,7 @@ button {
 .long-line {
   width: 100%;
   height: 1px;
-  background-color: $mainTextColor;
+  background-color: $bodyBg;
   opacity: 25%;
 }
 
