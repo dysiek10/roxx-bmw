@@ -1,8 +1,9 @@
 ///////////////////////////////////////////////////
 // GLOBAL
 
-$bodyBg: #efefef;
+$bodyBg: #fff;
 $overlay: rgba(0, 0, 0, 0.5);
+$modal: rgba(0, 0, 0, 0.9);
 
 $mainTextColor: #4e4e4e;
 $secondaryTextColor: #707070;
@@ -14,12 +15,10 @@ $btnBg: #3369d3;
 ///////////////////////////////////////////////////
 // MEDIA QUERIES
 
-$poschangeWidth: 1600px;
-$dropColWidth: 1200px;
-$homeColWidth: 1010px;
-$portfColWidth: 900px;
-$menuUpWidth: 800px;
-$menuNumHide: 900px;
+$posChange: 1600px;
+$spaceChange: 1400px;
+$dropCol: 1200px;
+$hide: 600px;
 $menuHide: 450px;
 
 ///////////////////////////////////////////////////

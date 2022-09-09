@@ -2,7 +2,7 @@
   padding: 0 5px;
   .row {
     .col {
-      @media (max-width: $dropColWidth) {
+      @media (max-width: $dropCol) {
       }
     }
     .remove {

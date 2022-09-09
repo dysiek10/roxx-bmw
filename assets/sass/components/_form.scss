@@ -42,6 +42,46 @@
         // input::placeholder {
         //   font-weight: 600;
         // }
+
+        input[type="radio"] {
+          display: none;
+
+          &:checked + .label-radio::after {
+            content: "";
+            width: 10px;
+            height: 10px;
+            background-color: $secondaryTextColor;
+            border-radius: 50%;
+
+            display: block;
+            position: absolute;
+            top: 6px;
+            left: 6px;
+          }
+        }
+
+        .label-radio {
+          padding: 0 0 0 30px;
+          margin: 0 30px 10px 0;
+          font-size: 20px;
+
+          display: inline-block;
+          position: relative;
+
+          &::before {
+            content: "";
+            width: 22px;
+            height: 22px;
+
+            border-radius: 50%;
+            border: 1.5px solid $secondaryTextColor;
+
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+          }
+        }
       }
     }
 

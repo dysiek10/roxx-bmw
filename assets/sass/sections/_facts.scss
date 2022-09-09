@@ -1,29 +1,28 @@
 .facts {
   z-index: 1;
   .row {
+    align-items: flex-start;
     .photos {
-      position: relative;
+      display: flex;
+
+      .col2to5 {
+        align-self: flex-end;
+        margin: 0 0 -80px 0;
+      }
+
       img {
-        &:first-child {
-          position: absolute;
-          right: 5px;
-          max-width: 540px;
-        }
-        &:last-child {
-          max-width: 320px;
-          position: absolute;
-          left: -214px;
-          bottom: -30px;
-        }
+        display: block;
       }
     }
 
     .info {
       position: relative;
-      right: -120px;
+      right: -150px;
+      padding: 0 250px 0 0;
 
-      @media (max-width: $poschangeWidth) {
-        right: -60px;
+      @media (max-width: $posChange) {
+        right: -75px;
+        padding: 0 200px 0 0;
       }
 
       .facts-list {
