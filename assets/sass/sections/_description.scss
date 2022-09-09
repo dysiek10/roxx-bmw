@@ -1,0 +1,25 @@
+.description {
+  .row {
+    .info {
+      padding: 0 120px 0 0;
+
+      @media (max-width: $poschangeWidth) {
+        padding: 0 60px 0 0;
+      }
+    }
+    .photos {
+      position: relative;
+      img {
+        &:first-child {
+          max-width: 540px;
+        }
+        &:last-child {
+          max-width: 320px;
+          position: absolute;
+          right: -214px;
+          top: -80px;
+        }
+      }
+    }
+  }
+}

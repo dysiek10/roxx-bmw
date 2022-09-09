@@ -1,0 +1,55 @@
+.nav-bar {
+  z-index: 999;
+  font-family: $headerFontFamily;
+  .navigation {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    margin: 0 auto;
+
+    .nav-items {
+      display: flex;
+
+      .item {
+        &:last-child {
+          margin: 0;
+        }
+      }
+
+      .item {
+        margin: 0 50px 0 0;
+        font-size: 18px;
+
+        &.hidden {
+          display: none;
+        }
+
+        a {
+          color: $homeTextColor;
+          font-weight: 700;
+        }
+      }
+    }
+
+    .logo {
+      width: 50px;
+    }
+  }
+
+  .long-line {
+    width: calc(100% - 75px);
+    background-color: $bodyBg;
+    position: relative;
+  }
+
+  .sub {
+    position: relative;
+    right: 75px;
+    color: $homeTextColor;
+    font-size: 16px;
+    text-align: right;
+  }
+}

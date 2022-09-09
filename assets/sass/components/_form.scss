@@ -1,0 +1,64 @@
+.form {
+  .container {
+    position: relative;
+    h2 {
+      margin: 0 0 20px 0;
+    }
+
+    p {
+      margin: 0 0 100px 0;
+    }
+
+    form {
+      position: relative;
+      z-index: 444;
+      margin: 0 auto;
+      max-width: 800px;
+      padding: 100px 80px 80px 80px;
+      background-color: #fff;
+      box-shadow: 0 0 50px rgba($mainTextColor, 0.1);
+
+      .form-row {
+        margin: 0 0 30px 0;
+
+        &:last-child {
+          margin: 0;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="phone"] {
+          width: 80%;
+          padding: 15px;
+          border-radius: 0;
+          border: 1px solid rgba($mainTextColor, 0.25);
+          outline: none;
+          &:focus {
+            border-color: $mainTextColor;
+            border-radius: 0;
+          }
+        }
+
+        // input::placeholder {
+        //   font-weight: 600;
+        // }
+      }
+    }
+
+    .photos {
+      .row {
+        .col {
+          position: absolute;
+          &:first-child {
+            bottom: 0;
+            left: -50px;
+          }
+          &:last-child {
+            top: 150px;
+            right: -120px;
+          }
+        }
+      }
+    }
+  }
+}

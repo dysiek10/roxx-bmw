@@ -1,0 +1,12 @@
+.gallery {
+  padding: 0 5px;
+  .row {
+    .col {
+      @media (max-width: $dropColWidth) {
+      }
+    }
+    .remove {
+      padding: 0;
+    }
+  }
+}
