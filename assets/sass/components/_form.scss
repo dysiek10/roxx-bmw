@@ -1,12 +1,14 @@
 .form {
   .container {
-    background-image: url(../../img/car-1.png), url(../../img/car-2.png);
-    background-position: bottom left, top right;
+    background-image: url(../img/car-1.png), url(../img/car-2.png);
+    background-position: bottom left, top right -120px;
     background-repeat: no-repeat, no-repeat, no-repeat;
-    background-size: contain;
+    background-size: 600px;
 
     @media (max-width: $spaceMedium) {
-      padding: 0;
+      padding: 300px 0 250px 0;
+      background-position: bottom right -250px, top left -180px;
+      background-size: 500px;
     }
 
     h2 {
@@ -98,33 +100,5 @@
         }
       }
     }
-
-    // .photos {
-    //   @media (max-width: $spaceMedium) {
-    //     visibility: hidden;
-    //   }
-    //   .row {
-    //     .col {
-    //       position: absolute;
-
-    //       &:first-child {
-    //         bottom: 0;
-    //         left: -4%;
-    //       }
-    //       &:last-child {
-    //         top: 15%;
-    //         right: -9%;
-    //       }
-
-    //       &.col2 {
-    //         width: 50%;
-    //       }
-    //     }
-    //   }
-    // }
-
-    // .car {
-    //   display: block;
-    // }
   }
 }

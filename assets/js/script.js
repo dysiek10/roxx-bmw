@@ -20,10 +20,14 @@ function navClick() {
 }
 
 hamburger.addEventListener("click", navClick);
-btnHamburger.addEventListener("click", navClick);
+btnHamburger.addEventListener("click", () => {
+  if (hamburger.classList.contains("is-active")) {
+    navClick();
+  }
+});
 
 ///////////////////////////////////////////////////
-// Reveal Sections
+// Splide
 
 const splide = new Splide(".splide", {
   arrows: false,
@@ -34,30 +38,7 @@ splide.mount();
 ///////////////////////////////////////////////////
 // Reveal Sections
 
-const allSections = document.querySelectorAll(".section");
-const imgsTop = document.querySelectorAll(".img-top");
-const imgsBottom = document.querySelectorAll("img-bottom");
-
-function revealSection(entries, observer) {
-  const [entry] = entries;
-
-  if (!entry.isIntersecting) return;
-
-  entry.target.classList.remove("section-hidden");
-  imgsTop.forEach((img) => img.classList.remove("from-bottom"));
-  imgsBottom.forEach((img) => img.classList.remove("from-top"));
-  observer.unobserve(entry.target);
-}
-
-const sectionObserer = new IntersectionObserver(revealSection, {
-  root: null,
-  threshold: 0.15,
-});
-
-allSections.forEach(function (section) {
-  sectionObserer.observe(section);
-  section.classList.add("section-hidden");
-});
+AOS.init();
 
 ///////////////////////////////////////////////////
 // Lazy Loading Images
@@ -87,6 +68,11 @@ const imgObserver = new IntersectionObserver(loadImg, {
 imgTargets.forEach((img) => imgObserver.observe(img));
 
 ///////////////////////////////////////////////////
+// Lightbox
+
+const lightbox = GLightbox();
+
+///////////////////////////////////////////////////
 // Form Validation
 
 const validation = new JustValidate(".form", {
@@ -94,16 +80,7 @@ const validation = new JustValidate(".form", {
 });
 
 validation
-  // validdacja radio button?????
-  // ???????????????????????????????????????
-  // ???????????????????????????????????????
-  // ???????????????????????????????????????
-  // ???????????????????????????????????????
-  // .addField(".sex:checked", [
-  //   {
-  //     rule: "required",
-  //   },
-  // ])
+  .addRequiredGroup("#sex")
   .addField("#input-name", [
     {
       rule: "required",
@@ -164,7 +141,12 @@ validation
       errorMessage:
         "Phone number is invalid! Please type in specified format: 123456789.",
     },
-  ]);
+  ])
+  .onSuccess((event) => {
+    document.querySelector(".form form").clear();
+    openModal();
+    event.preventDefault();
+  });
 
 ///////////////////////////////////////////////////
 // Modal Window
@@ -185,11 +167,6 @@ function closeModal() {
 
   document.querySelector("html").classList.remove("menu-open");
 }
-
-form.addEventListener("submit", (event) => {
-  openModal();
-  event.preventDefault();
-});
 
 btnCloseModal.addEventListener("click", closeModal);
 

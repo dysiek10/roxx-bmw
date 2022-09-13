@@ -13,8 +13,13 @@
         }
 
         @media (max-width: $spaceSmall) {
-          // czemu to nie działa
-          margin: 0 -10px 20%;
+          margin: 0 0 20% 0;
+          padding: 0;
+          gap: 10px;
+
+          .col {
+            padding: 0;
+          }
         }
 
         .col2to5 {
@@ -24,7 +29,6 @@
 
         img {
           display: block;
-          border-top-left-radius: 10%;
         }
       }
 
@@ -104,8 +108,6 @@
                 left: -5px;
                 z-index: 10;
                 transform: skew(-30deg);
-                //  jaaaaaaaaaaaaaaak????????????
-                // border-top-left-radius: 15%;
                 transition: 0.4s;
               }
             }

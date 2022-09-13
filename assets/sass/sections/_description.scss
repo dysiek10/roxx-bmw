@@ -20,59 +20,6 @@
         @media (max-width: $spaceSmall) {
           padding: 0 10% 0;
         }
-
-        .emphasize {
-          position: relative;
-          transition: 0.4s;
-
-          &:hover {
-            transform: translateX(15px);
-
-            // &::after {
-            //   content: "";
-            //   width: 100%;
-            // }
-
-            .quote {
-              color: $homeTextColor;
-
-              &::after {
-                width: 100%;
-              }
-            }
-          }
-
-          .quote {
-            position: relative;
-            z-index: 999;
-            transition: 0.4s;
-
-            &::after {
-              content: "";
-              position: absolute;
-              top: 50%;
-              transform: translateY(-50%) skew(-30deg);
-              left: 4px;
-              width: 0;
-              height: 30px;
-              background-color: $btnBg;
-              z-index: 1;
-              transition: 0.4s;
-            }
-          }
-
-          &::after {
-            content: "";
-            background-color: $btnBg;
-            height: 15px;
-            width: 0;
-            position: absolute;
-            top: -30px;
-            left: -5px;
-            transform: skew(-30deg);
-            transition: 0.4s;
-          }
-        }
       }
 
       .photos {
@@ -83,8 +30,13 @@
         }
 
         @media (max-width: $spaceSmall) {
-          // czemu to nie działa
-          margin: 0 -10px 10%;
+          margin: 0 0 10% 0;
+          padding: 0;
+          gap: 10px;
+
+          .col {
+            padding: 0;
+          }
         }
 
         .col2to5 {
@@ -94,7 +46,6 @@
 
         img {
           display: block;
-          border-top-left-radius: 10%;
         }
       }
     }

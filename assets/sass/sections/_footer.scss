@@ -31,19 +31,31 @@ footer {
 
       .media-items {
         display: flex;
+        align-items: center;
 
         .item {
           width: 24px;
+          height: 24px;
           margin: 0 30px 0 0;
           transition: 0.4s;
 
-          &:last-child {
-            margin: 0;
+          a {
+            svg {
+              display: block;
+              fill: $mainHeadersTextColor;
+              width: 100%;
+              transition: 0.4s;
+              align-self: flex-start;
+            }
+            &:hover {
+              svg {
+                fill: $btnBg;
+              }
+            }
           }
 
-          &:hover {
-            // czemu color nie działą
-            background-color: $btnBg;
+          &:last-child {
+            margin: 0;
           }
         }
       }
