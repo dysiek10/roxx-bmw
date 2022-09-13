@@ -30,7 +30,7 @@
             
             <ul class="menu">
               <li class="menu-item">
-                <a href="#facts">Nowe BMW <span class="model">IX</span></a>
+                <a href="#facts">Nowe <span class="bmw">BMW</span> <span class="model">IX</span></a>
               </li>
               <li class="menu-item hidden toggle">
                 <a href="#description">Innowacyjna aerodynamika</a>
@@ -39,7 +39,7 @@
                 <a href="#gallery">Galeria</a>
               </li>
               <li class="menu-item">
-                <a href="#form">Umów jazdę próbną</a>
+                <a class="go-to-form" href="#form">Umów jazdę próbną</a>
               </li>
             </ul>
 
@@ -67,8 +67,8 @@
             <div class="splide__track">
               <div class="splide__list">
                 <div class="splide__slide"><img src="assets/img/slide-1.jpg" alt="Photo 1" /></div>
-                <div class="splide__slide"><img src="assets/img/slide-2.jpg" alt="Photo 1" /></div>
-                <div class="splide__slide"><img src="assets/img/slide-3.jpg" alt="Photo 1" /></div>
+                <div class="splide__slide"><img src="assets/img/slide-2.jpg" alt="Photo 2" /></div>
+                <div class="splide__slide"><img src="assets/img/slide-3.jpg" alt="Photo 3" /></div>
               </div>
             </div>
           </div>
@@ -79,9 +79,9 @@
 
             <div class="header">
               <div class="logo">
-                <img src="assets/img/bmw_i_logo.png" alt="BMW i logo" />
+                <img src="assets/img/bmw_i_logo.png" alt="logo BMW iX" />
               </div>
-              <h1>NOWE BMW <span class="model">iX</span></h1>
+              <h1>Nowe <span class="bmw">BMW</span> <span class="model">iX</span></h1>
               <p>Pionier nowej ery.</p>
 
             </div>
@@ -100,10 +100,10 @@
             <!-- PHOTOS -->
             <div class="col col2 photos">
               <div class="col col2to5">
-                <img class="lazy-img" src="assets/img/photo-1.jpg" data-src="assets/img/photo-1.jpg" alt="BMW photography" />
+                <img loading="lazy" class="lazy-img" src="assets/img/photo-1.jpg" data-src="assets/img/photo-1.jpg" alt="BMW photography" width="640" height="640"/>
               </div>
-              <div class="col col3to5">
-                <img class="lazy-img" src="assets/img/photo-2.jpg" data-src="assets/img/photo-2.jpg" alt="BMW photography" />
+              <div loading="lazy" class="col col3to5">
+                <img class="lazy-img" src="assets/img/photo-2.jpg" data-src="assets/img/photo-2.jpg" alt="BMW photography" width="1072" height="1072"/>
               </div>
             </div>
             <!-- BOXES -->
@@ -161,7 +161,7 @@
               </h2>
               <p class="emphasize">
                 BMW <span class="model">iX</span> w każdym milimetrze swojej
-                dynamicznej stylistyki wdraża zasadę „forma podąża za funkcją”.
+                dynamicznej stylistyki wdraża zasadę <span class="quote">„forma podąża za funkcją”</span>.
               </p>
               <p>
                 Widać to przede wszystkim po gładkiej karoserii ze zwężoną
@@ -177,10 +177,10 @@
             <!-- PHOTOS -->
             <div class="col col2 photos">
               <div class="col col3to5">
-                <img class="lazy-img" src="assets/img/photo-3-lazy.jpg" data-src="assets/img/photo-3.jpg" alt="BMW photography" />
+                <img loading="lazy" class="lazy-img" src="assets/img/photo-3-lazy.jpg" data-src="assets/img/photo-3.jpg" alt="BMW photography" width="1072" height="1072"/>
               </div>
               <div class="col col2to5">
-                <img class="lazy-img" src="assets/img/photo-4-lazy.jpg" data-src="assets/img/photo-4.jpg" alt="BMW photography" />
+                <img loading="lazy" class="lazy-img" src="assets/img/photo-4-lazy.jpg" data-src="assets/img/photo-4.jpg" alt="BMW photography" width="640" height="640"/>
               </div>
             </div>
           </div>
@@ -191,25 +191,27 @@
       <section class="section gallery" id="gallery">
         <div class="row">
           <div class="col col2">
-            <img src="assets/img/photo-5.jpg" alt="BMW photography" />
+            <a href="" class="glightbox">
+              <img loading="lazy" src="assets/img/photo-5.jpg" alt="BMW photography" width="2414" height="1611"/>
+            </a>
           </div>
 
           <div class="col col2 remove">
             <div class="row">
               <div class="col col3">
-                <img src="assets/img/photo-6.jpg" alt="BMW photography" />
+                <img loading="lazy" src="assets/img/photo-6.jpg" alt="BMW photography" width="929" height="928" />
               </div>
               <div class="col col2to3">
-                <img src="assets/img/photo-7.jpg" alt="BMW photography" />
+                <img loading="lazy" src="assets/img/photo-7.jpg" alt="BMW photography" width="1876" height="931"/>
               </div>
             </div>
 
             <div class="row">
-              <div class="col col2">
-                <img src="assets/img/photo-8.jpg" alt="BMW photography" />
+              <div class="col col2 modify">
+                <img loading="lazy" src="assets/img/photo-8.jpg" alt="BMW photography" width="2107" height="1369"/>
               </div>
-              <div class="col col2">
-                <img src="assets/img/photo-9.jpg" alt="BMW photography" />
+              <div class="col col2 modify">
+                <img loading="lazy" src="assets/img/photo-9.jpg" alt="BMW photography" width="1401" height="930"/>
               </div>
             </div>
           </div>
@@ -220,6 +222,10 @@
       <section class="section form" id="form">
         <div class="container">
 
+          <!-- <div class="car car-top hidden">
+            <img loading="lazy" src="assets/img/car-1.png" alt="BMW photography" />
+          </div> -->
+
           <form class="form" action="" method="GET">
             <h2>Umów jazdę próbną <sup>BMW <span class="model">iX</span></sup></h2>
             <p class="emphasize">Zachęcamy do ograniczenia poruszania się i pozostania w domu.</br> Jeśli jednak jazda testowa okaże się niezbędna prosimy o wypełnienie poniższego formularza.</p>
@@ -227,7 +233,7 @@
             <h3>Wypełnij formularz swoimi danymi.</h3>
 
             <div class="form-row">
-              <input type="radio" name="sex" value="Pan" id="radio-male">
+              <input type="radio" name="sex" value="Pan" id="radio-male" class="sex">
               <label class="label-radio" for="radio-male">Pan</label>
               <input type="radio" name="sex" value="Pani" id="radio-female">
               <label class="label-radio" for="radio-female">Pani</label>
@@ -258,17 +264,22 @@
             </div>
           </form>
 
-        <div class="photos">
-          <div class="row">
-            <div class="col col2">
-              <img src="assets/img/car-1.png" alt="BMW photography" />
+          <!-- <div class="photos">
+            <div class="row">
+              <div class="col col2">
+                <img src="assets/img/car-1.png" alt="BMW photography" />
+              </div>
+              <div class="col col2">
+                <img src="assets/img/car-2.png" alt="BMW photography" />
+              </div>
             </div>
-            <div class="col col2">
-              <img src="assets/img/car-2.png" alt="BMW photography" />
-            </div>
-          </div>
+          </div> -->
+
+          <!-- <div class="car car-bottom hidden">
+            <img src="assets/img/car-2.png" alt="BMW photography" />
+          </div> -->
+
         </div>
-      </div>
       </section>
     </main>
 
@@ -277,11 +288,11 @@
         <div class="social-media">
           <h4>Dołącz do nas</h4>
           <ul class="media-items">
-            <li class="item"><a href="">icon</a></li>
-            <li class="item"><a href="">icon</a></li>
-            <li class="item"><a href="">icon</a></li>
-            <li class="item"><a href="">icon</a></li>
-            <li class="item"><a href="">icon</a></li>
+            <li class="item"><a href=""><img src="assets/img/icons8-facebook.svg" alt=""></a></li>
+            <li class="item"><a href=""><img src="assets/img/icons8-linkedin.svg" alt=""></a></li>
+            <li class="item"><a href=""><img src="assets/img/icons8-youtube.svg" alt=""></a></li>
+            <li class="item"><a href=""><img src="assets/img/icons8-instagram.svg" alt=""></a></li>
+            <li class="item"><a href=""><img src="assets/img/icons8-twitter.svg" alt=""></a></li>
           </ul>
         </div>
 
@@ -315,7 +326,6 @@
             </ul>
           </div>
         </div>
-        <div class="data">© BMW Polska</div>
       </div>
       
       <div class="modal hidden">
@@ -325,8 +335,15 @@
       </div>
     </footer>
 
+    <div class="date">
+        © BMW Polska <span class="year"></span>
+    </div>
 
-    <script src="assets/js/splide.min.js"></script>
+
+
+    <script src="assets/js/plugins/just-validate.production.min.js"></script>
+    <script src="assets/js/plugins/glightbox.min.js"></script>
+    <script src="assets/js/plugins/splide.min.js"></script>
     <script src="assets/js/script.js"></script>
   </body>
 

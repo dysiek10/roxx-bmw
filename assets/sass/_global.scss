@@ -19,6 +19,10 @@ body {
   font-weight: 400;
   font-size: 14px;
   line-height: 175%;
+
+  @media (max-width: $spaceSmall) {
+    font-size: 13px;
+  }
 }
 
 h1,
@@ -33,16 +37,29 @@ h6 {
 }
 
 h1 {
+  @include fluid-type(360px, 1360px, 48px, 64px);
   color: $homeTextColor;
-  font-size: 64px;
   margin: 0 0 20px 0;
+  text-transform: uppercase;
+
+  @media (max-width: $container) {
+    text-transform: capitalize;
+  }
+
+  // @media (max-width: $spaceSmall) {
+  //   line-break: ;
+  // }
 }
 
 h2 {
+  @include fluid-type(360px, 1360px, 24px, 36px);
   color: $mainHeadersTextColor;
   text-transform: uppercase;
-  font-size: 36px;
   margin: 0 0 60px 0;
+
+  @media (max-width: $spaceSmall) {
+    margin: 0 0 40px 0;
+  }
 }
 
 h3 {
@@ -50,6 +67,14 @@ h3 {
   font-size: 20px;
   font-weight: 600;
   margin: 0 0 30px 0;
+}
+
+h4 {
+  @include fluid-type(360px, 1360px, 20px, 24px);
+}
+
+sup {
+  @include fluid-type(360px, 1360px, 16px, 22px);
 }
 
 a {
@@ -60,14 +85,28 @@ p {
   margin: 0 0 20px 0;
 }
 
+p.emphasize {
+  @include fluid-type(360px, 1360px, 16px, 20px);
+  color: $secondaryTextColor;
+  font-family: $mainFontFamily;
+  line-height: 200%;
+  font-size: 20px;
+  font-weight: 300;
+  margin: 0 0 30px 0;
+
+  @media (max-width: $spaceSmall) {
+    line-height: 150%;
+    margin: 0 0 20px 0;
+  }
+}
+
 ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
+  @include reset-list;
 }
 
 img {
   width: 100%;
+  height: 100%;
 }
 
 .lazy-img {
@@ -76,22 +115,26 @@ img {
 
 .container {
   width: 100%;
-  max-width: 1360px;
+  max-width: $container;
   margin: 0 auto;
   padding: 0 10px;
 
   &.max {
-    max-width: 2000px;
+    max-width: $containerMax;
   }
 }
 
 .section {
-  padding: 150px 0;
+  padding: 7% 0;
 
   transition: transform 1s, opacity 1s;
 
   @media (max-width: $dropCol) {
-    padding: 100px 0;
+    padding: 10% 0;
+  }
+
+  @media (max-width: $spaceSmall) {
+    padding: 15% 0;
   }
 }
 
@@ -108,7 +151,7 @@ img {
 
 .col {
   padding: 0 5px;
-  margin: 0 0 5px 0;
+  margin: 0 0 10px 0;
 }
 
 // 1/2
@@ -157,6 +200,8 @@ button {
 }
 
 .btn {
+  @include fluid-type(360px, 1360px, 14px, 20px);
+  position: relative;
   display: inline-block;
   padding: 20px 90px;
   background-color: $btnBg;
@@ -164,6 +209,56 @@ button {
   font-family: $headerFontFamily;
   font-size: 18px;
   color: $homeTextColor;
+  transition: 0.4s;
+  overflow: hidden;
+
+  @media (max-width: $spaceMedium) {
+    padding: 20px 60px;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+  &:before {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.2);
+    width: 60px;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0.5;
+    filter: blur(30px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    background: rgba(255, 255, 255, 0.1);
+    width: 30px;
+    height: 100%;
+    left: 30px;
+    top: 0;
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100px) skewX(-15deg);
+  }
+  &:hover {
+    background: #710416;
+    cursor: pointer;
+    &:before {
+      transform: translateX(450px) skewX(-15deg);
+      opacity: 0.6;
+      transition: 0.7s;
+    }
+    &:after {
+      transform: translateX(450px) skewX(-15deg);
+      opacity: 1;
+      transition: 0.7s;
+    }
+  }
 }
 
 .long-line {
@@ -177,13 +272,8 @@ button {
   display: none !important;
 }
 
-.emphasize {
-  color: $secondaryTextColor;
-  font-family: $mainFontFamily;
-  line-height: 200%;
-  font-size: 20px;
-  font-weight: 300;
-  margin: 0 0 30px 0;
+.bmw {
+  text-transform: uppercase;
 }
 
 .model {
@@ -193,4 +283,10 @@ button {
   &::first-letter {
     text-transform: lowercase;
   }
+}
+
+.date {
+  padding: 15px 0;
+  margin: 0 auto;
+  text-align: center;
 }

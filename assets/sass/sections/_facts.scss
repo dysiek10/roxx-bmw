@@ -1,68 +1,118 @@
 .facts {
   z-index: 1;
-  .row {
-    align-items: flex-start;
-    .photos {
-      display: flex;
-
-      .col2to5 {
-        align-self: flex-end;
-        margin: 0 0 -80px 0;
-      }
-
-      img {
-        display: block;
-      }
-    }
-
-    .info {
-      position: relative;
-      right: -150px;
-      padding: 0 250px 0 0;
-
-      @media (max-width: $posChange) {
-        right: -75px;
-        padding: 0 200px 0 0;
-      }
-
-      .facts-list {
+  .container {
+    padding: 0;
+    .row {
+      align-items: flex-start;
+      .photos {
         display: flex;
-        flex-wrap: wrap;
-        margin: 0 -15px;
 
-        .fact {
-          width: calc(100% / 3);
-          padding: 0 15px;
-          margin: 0 0 30px 0;
+        @media (max-width: $dropCol) {
+          margin: 0 0 200px 0;
+          margin: 0 0 20% 0;
+        }
 
-          .num {
-            font-family: $headerFontFamily;
-            color: $mainHeadersTextColor;
-            font-weight: 700;
-            font-size: 12px;
-            margin: 0 0 35px 0;
-            position: relative;
+        @media (max-width: $spaceSmall) {
+          // czemu to nie działa
+          margin: 0 -10px 20%;
+        }
 
-            &::before {
-              content: "";
-              width: 100%;
-              height: 1px;
-              position: absolute;
-              bottom: -11px;
-              left: 0;
-              background-color: $secondaryTextColor;
-              opacity: 25%;
+        .col2to5 {
+          align-self: flex-end;
+          margin: 0 0 -10% 0;
+        }
+
+        img {
+          display: block;
+          border-top-left-radius: 10%;
+        }
+      }
+
+      .info {
+        position: relative;
+        right: -7%;
+        padding: 0 14% 0 0;
+
+        @media (max-width: $dropCol) {
+          right: auto;
+          padding: 0 20% 0;
+        }
+
+        @media (max-width: $spaceSmall) {
+          padding: 0 10% 0;
+        }
+
+        .facts-list {
+          display: flex;
+          flex-wrap: wrap;
+          margin: 0 -15px;
+
+          .fact {
+            width: calc(100% / 3);
+            padding: 0 15px;
+            margin: 0 0 60px 0;
+
+            @media (max-width: $dropCol) {
+              margin: 0 0 30px 0;
             }
 
-            &::after {
-              content: "";
-              width: 10%;
-              height: 1px;
-              background-color: $secondaryTextColor;
-              position: absolute;
-              bottom: -11px;
-              left: 0;
-              z-index: 10;
+            @media (max-width: $spaceMedium) {
+              width: 50%;
+            }
+
+            @media (max-width: $spaceMini) {
+              width: 100%;
+            }
+
+            &:hover {
+              .num::after {
+                width: calc(100% + 7px);
+              }
+
+              .desc {
+                transform: translateX(15px);
+              }
+            }
+
+            .num {
+              transition: 0.4s;
+              font-family: $headerFontFamily;
+              color: $mainHeadersTextColor;
+              font-weight: 700;
+              font-size: 12px;
+              margin: 0 0 35px 0;
+              position: relative;
+
+              &::before {
+                content: "";
+                width: 100%;
+                height: 1px;
+                position: absolute;
+                bottom: -11px;
+                left: 0;
+                background-color: $secondaryTextColor;
+                opacity: 25%;
+              }
+
+              &::after {
+                content: "";
+                width: 0;
+                height: 15px;
+                background-color: $btnBg;
+                position: absolute;
+                bottom: -17px;
+                left: -5px;
+                z-index: 10;
+                transform: skew(-30deg);
+                //  jaaaaaaaaaaaaaaak????????????
+                // border-top-left-radius: 15%;
+                transition: 0.4s;
+              }
+            }
+
+            .desc {
+              margin: 0;
+              transition: 0.4s;
             }
           }
         }

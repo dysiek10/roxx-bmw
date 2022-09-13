@@ -1,28 +1,101 @@
 .description {
   z-index: 1;
-  .row {
-    align-items: flex-start;
-    .info {
-      padding: 0 250px 0 200px;
+  .container {
+    padding: 0;
+    .row {
+      align-items: flex-start;
 
-      @media (max-width: 1850px) {
-        padding: 0 150px 0 200px;
+      @media (max-width: $dropCol) {
+        flex-direction: column-reverse;
+      }
+      .info {
+        padding: 0 7% 0 14%;
+        transition: 0.4s;
+        position: relative;
+
+        @media (max-width: $dropCol) {
+          padding: 0 20% 0;
+        }
+
+        @media (max-width: $spaceSmall) {
+          padding: 0 10% 0;
+        }
+
+        .emphasize {
+          position: relative;
+          transition: 0.4s;
+
+          &:hover {
+            transform: translateX(15px);
+
+            // &::after {
+            //   content: "";
+            //   width: 100%;
+            // }
+
+            .quote {
+              color: $homeTextColor;
+
+              &::after {
+                width: 100%;
+              }
+            }
+          }
+
+          .quote {
+            position: relative;
+            z-index: 999;
+            transition: 0.4s;
+
+            &::after {
+              content: "";
+              position: absolute;
+              top: 50%;
+              transform: translateY(-50%) skew(-30deg);
+              left: 4px;
+              width: 0;
+              height: 30px;
+              background-color: $btnBg;
+              z-index: 1;
+              transition: 0.4s;
+            }
+          }
+
+          &::after {
+            content: "";
+            background-color: $btnBg;
+            height: 15px;
+            width: 0;
+            position: absolute;
+            top: -30px;
+            left: -5px;
+            transform: skew(-30deg);
+            transition: 0.4s;
+          }
+        }
       }
 
-      @media (max-width: $posChange) {
-        padding: 0 75px 0 150px;
-      }
-    }
-    .photos {
-      display: flex;
+      .photos {
+        display: flex;
 
-      .col2to5 {
-        align-self: flex-start;
-        margin: -80px 0 0 0;
-      }
+        @media (max-width: $dropCol) {
+          margin: 0 0 10% 0;
+        }
 
-      img {
-        display: block;
+        @media (max-width: $spaceSmall) {
+          // czemu to nie działa
+          margin: 0 -10px 10%;
+        }
+
+        .col2to5 {
+          align-self: flex-start;
+          margin: -10% 0 0 0;
+        }
+
+        img {
+          display: block;
+          border-top-left-radius: 10%;
+        }
       }
     }
   }

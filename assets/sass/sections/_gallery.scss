@@ -1,12 +1,27 @@
 .gallery {
   padding: 0 5px;
+
+  @media (max-width: $spaceMini) {
+    padding: 0 8px;
+  }
+
   .row {
     .col {
-      @media (max-width: $dropCol) {
+      @media (max-width: $spaceMini) {
+        padding: 0 2px 0;
       }
-    }
-    .remove {
-      padding: 0;
+      &.remove {
+        padding: 0;
+        margin: 0;
+      }
+
+      &.modify {
+        width: 50%;
+      }
+
+      @media (max-width: $spaceMini) {
+        margin: 0 0 4px 0;
+      }
     }
   }
 }
