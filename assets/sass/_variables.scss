@@ -10,16 +10,22 @@ $secondaryTextColor: #707070;
 
 $mainFontFamily: "Open Sans", sans-serif;
 
-$btnBg: #3369d3;
+// $btnBg: #3369d3;
+$btnBg: #0066b1;
 
 ///////////////////////////////////////////////////
 // MEDIA QUERIES
 
+$containerMax: 2000px;
+$container: 1360px;
+
+$spaceLarge: 1850px;
 $posChange: 1600px;
 $spaceChange: 1400px;
 $dropCol: 1200px;
-$hide: 600px;
-$menuHide: 450px;
+$spaceMedium: 800px;
+$spaceSmall: 600px;
+$spaceMini: 450px;
 
 ///////////////////////////////////////////////////
 // HEADERS

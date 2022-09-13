@@ -1,22 +1,35 @@
 .form {
   .container {
-    position: relative;
+    background-image: url(../../img/car-1.png), url(../../img/car-2.png);
+    background-position: bottom left, top right;
+    background-repeat: no-repeat, no-repeat, no-repeat;
+    background-size: contain;
+
+    @media (max-width: $spaceMedium) {
+      padding: 0;
+    }
+
     h2 {
       margin: 0 0 20px 0;
     }
 
     p {
-      margin: 0 0 100px 0;
+      margin: 0 0 15% 0;
     }
 
     form {
-      position: relative;
       z-index: 444;
       margin: 0 auto;
-      max-width: 800px;
-      padding: 100px 80px 80px 80px;
+      max-width: 60%;
+      padding: 7% 6% 6% 6%;
       background-color: #fff;
       box-shadow: 0 0 50px rgba($mainTextColor, 0.1);
+
+      @media (max-width: $spaceMedium) {
+        background-color: transparent;
+        box-shadow: none;
+        max-width: 100%;
+      }
 
       .form-row {
         margin: 0 0 30px 0;
@@ -37,11 +50,11 @@
             border-color: $mainTextColor;
             border-radius: 0;
           }
-        }
 
-        // input::placeholder {
-        //   font-weight: 600;
-        // }
+          @media (max-width: $spaceMini) {
+            width: 100%;
+          }
+        }
 
         input[type="radio"] {
           display: none;
@@ -61,6 +74,7 @@
         }
 
         .label-radio {
+          @include fluid-type(360px, 1360px, 14px, 20px);
           padding: 0 0 0 30px;
           margin: 0 30px 10px 0;
           font-size: 20px;
@@ -85,20 +99,32 @@
       }
     }
 
-    .photos {
-      .row {
-        .col {
-          position: absolute;
-          &:first-child {
-            bottom: 0;
-            left: -50px;
-          }
-          &:last-child {
-            top: 150px;
-            right: -120px;
-          }
-        }
-      }
-    }
+    // .photos {
+    //   @media (max-width: $spaceMedium) {
+    //     visibility: hidden;
+    //   }
+    //   .row {
+    //     .col {
+    //       position: absolute;
+
+    //       &:first-child {
+    //         bottom: 0;
+    //         left: -4%;
+    //       }
+    //       &:last-child {
+    //         top: 15%;
+    //         right: -9%;
+    //       }
+
+    //       &.col2 {
+    //         width: 50%;
+    //       }
+    //     }
+    //   }
+    // }
+
+    // .car {
+    //   display: block;
+    // }
   }
 }

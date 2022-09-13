@@ -1,6 +1,6 @@
 .hamburger {
   display: none;
-  width: 25px;
+  width: 30px;
   height: 20px;
 
   cursor: pointer;
@@ -12,7 +12,8 @@
     opacity: 70%;
     position: absolute;
     bottom: -40px;
-    right: 54px;
+    right: calc(10% + 5px);
+
     span {
       transform: rotate(45deg);
       top: 7px;
@@ -70,7 +71,7 @@
     transition: 0.4s;
   }
 
-  @media (max-width: $menuHide) {
+  @media (max-width: $spaceSmall) {
     display: block;
   }
 }

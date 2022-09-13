@@ -1,56 +1,111 @@
 footer {
-  padding: 0 0 50px 0;
   background-color: $footerBg;
   font-family: $footerFontFamily;
   font-weight: 700;
   color: $mainTextColor;
 
-  .social-media {
-    display: flex;
-    justify-content: right;
-    padding: 40px 0;
+  .container {
+    @media (max-width: $container) {
+      padding: 0 10%;
+    }
 
-    .media-items {
+    .social-media {
       display: flex;
+      flex-wrap: wrap;
+      justify-content: right;
+      align-items: center;
+      padding: 40px 0;
+
+      @media (max-width: $dropCol) {
+        justify-content: space-between;
+      }
+
+      @media (max-width: $spaceSmall) {
+        padding: 70px 0 40px 0;
+
+        h4 {
+          width: 100%;
+          margin: 0 0 30px 0;
+        }
+      }
+
+      .media-items {
+        display: flex;
+
+        .item {
+          width: 24px;
+          margin: 0 30px 0 0;
+          transition: 0.4s;
+
+          &:last-child {
+            margin: 0;
+          }
+
+          &:hover {
+            // czemu color nie działą
+            background-color: $btnBg;
+          }
+        }
+      }
+    }
+
+    .long-line {
+      background-color: $mainHeadersTextColor;
+    }
+
+    .info {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 70px 200px 70px 0;
+      margin: 0 -15px;
+
+      @media (max-width: $dropCol) {
+        padding: 70px 0;
+      }
 
       .item {
-        width: 30px;
-        margin: 0 30px 0 0;
+        padding: 0 15px;
+
+        @media (max-width: $spaceMedium) {
+          width: 50%;
+          margin: 0 0 70px 0;
+        }
+
+        @media (max-width: $spaceSmall) {
+          width: 100%;
+        }
+
+        h4 {
+          margin: 0 0 30px 0;
+        }
 
         &:last-child {
           margin: 0;
         }
       }
     }
-  }
 
-  .info {
-    display: flex;
-    justify-content: space-between;
-    padding: 70px 200px 70px 0;
+    .data {
+      background-color: $bodyBg;
+    }
 
-    .item {
-      margin: 0 75px 0 0;
+    h4 {
+      font-family: $footerFontFamily;
+      font-size: 20px;
+      font-weight: 300;
+      color: $mainTextColor;
+      margin: 0 30px 0 0;
+    }
 
-      h4 {
-        margin: 0 0 30px 0;
+    a {
+      @include fluid-type(360px, 1360px, 12px, 14px);
+      color: $mainTextColor;
+      transition: 0.4s;
+
+      &:hover {
+        color: $btnBg;
       }
     }
-  }
-
-  .data {
-    background-color: $bodyBg;
-  }
-
-  h4 {
-    font-family: $footerFontFamily;
-    font-size: 20px;
-    font-weight: 300;
-    color: $mainTextColor;
-    margin: 0 30px 0 0;
-  }
-
-  a {
-    color: $mainTextColor;
   }
 }

@@ -27,7 +27,7 @@
       left: calc((100% - 1350px) / 2);
       right: auto;
 
-      @media (max-width: $posChange) {
+      @media (max-width: $container) {
         left: 50%;
         transform: translateX(-50%);
         bottom: 25px;
@@ -35,14 +35,21 @@
 
       .splide__pagination__page {
         width: 60px;
-        height: 5px;
+        height: 15px;
         background-color: $bodyBg;
         border-radius: 0;
         opacity: 100%;
+        transform: skew(-30deg);
+        transition: 0.4s;
 
         &.is-active {
-          transform: none;
           background-color: $btnBg;
+          transform: scale(0.9) skew(-30deg);
+        }
+
+        &:hover {
+          background-color: $btnBg;
+          transform: scale(0.9) skew(-30deg);
         }
       }
     }
@@ -59,6 +66,10 @@
     .container {
       position: relative;
       z-index: 1;
+
+      @media (max-width: $container) {
+        padding: 0 10%;
+      }
 
       .header {
         display: flex;
